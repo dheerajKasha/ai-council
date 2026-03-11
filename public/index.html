@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI Council - Discussion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="kicker">AI Council</p>
+        <h1>Three Perspectives. One Verdict.</h1>
+        <p class="sub">Enter a topic and get three distinct viewpoints plus a final decision rationale.</p>
+      </section>
+
+      <section class="panel">
+        <form id="topicForm" class="topic-form">
+          <label for="topic">Discussion Topic</label>
+          <div class="input-row">
+            <input id="topic" name="topic" placeholder="Example: Should we adopt AI code review for all pull requests?" />
+            <button type="submit">Run Council</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results" class="results" aria-live="polite"></section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

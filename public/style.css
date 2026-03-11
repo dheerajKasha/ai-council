@@ -1,0 +1,247 @@
+:root {
+  --bg: #d9dde2;
+  --bg-deep: #c5cbd3;
+  --surface: #f2f4f7;
+  --surface-strong: #e8ecf1;
+  --ink: #11161d;
+  --ink-muted: #4a5564;
+  --line: #bac2cc;
+  --chip: #dfe4ea;
+  --shadow: 0 18px 48px rgba(21, 27, 36, 0.14);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 420px at 10% -15%, #eef1f5 0%, transparent 55%),
+    radial-gradient(820px 520px at 100% 5%, #cfd5dc 0%, transparent 52%),
+    linear-gradient(140deg, var(--bg), var(--bg-deep));
+}
+
+.shell {
+  width: min(980px, 92vw);
+  margin: 42px auto 56px;
+}
+
+.hero {
+  margin-bottom: 22px;
+}
+
+.kicker {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #3c4654;
+  font-size: 0.78rem;
+}
+
+.hero h1 {
+  margin: 6px 0 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.sub {
+  margin: 0;
+  color: var(--ink-muted);
+  max-width: 64ch;
+}
+
+.panel,
+.summary-card,
+.answer-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--surface), var(--surface-strong));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.topic-form label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #3a4452;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  border: 1px solid #aeb7c3;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  background: #f8fafc;
+  color: var(--ink);
+}
+
+input:focus {
+  outline: 2px solid #8792a0;
+  outline-offset: 1px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: linear-gradient(180deg, #4c5663, #38414d);
+  color: #f5f7fa;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.04);
+}
+
+.summary-card {
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.topic-label {
+  margin: 0;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.75rem;
+}
+
+.summary-card h2 {
+  margin: 6px 0 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.36rem;
+  line-height: 1.25;
+}
+
+.verdict-row {
+  margin-bottom: 8px;
+}
+
+.verdict-chip {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid #b5bfca;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.verdict-reason {
+  margin: 0;
+  color: #2f3946;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.answer-card {
+  padding: 14px;
+  border-radius: var(--radius-md);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-index {
+  color: var(--ink-muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.answer-card h3 {
+  margin: 0 0 6px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+}
+
+.answer-card p {
+  margin: 0;
+  color: #2e3846;
+  line-height: 1.48;
+}
+
+.loading,
+.error {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(243, 246, 250, 0.84);
+}
+
+.error {
+  color: #7f1d1d;
+  border-color: #c9a4a4;
+}
+
+@media (max-width: 860px) {
+  .answers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  button {
+    min-height: 42px;
+  }
+}
+
+.confidence {
+  border: 1px solid #acb6c3;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  background: #e7ebf0;
+  color: #334155;
+}
+
+.answer-value {
+  margin: 0 0 6px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.02rem;
+  color: #11161d;
+}
+.verdict-answer {
+  margin: 0 0 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  color: #11161d;
+}
+
